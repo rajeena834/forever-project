@@ -17,18 +17,18 @@ connectCloudinary()
 // Middlewares
 
 app.use(express.json())
-
-app.use(
-  cors({
-    origin: [
+app.use(cors())
+// app.use(
+//   cors({
+//     origin: [
     
-"https://vercel.com/rajeenas-projects/forever-frontend5" ,
-"https://vercel.com/rajeenas-projects/forever-admin1"
-   ],
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    credentials: true
-  })
-);
+// "https://vercel.com/rajeenas-projects/forever-frontend5" ,
+// "https://vercel.com/rajeenas-projects/forever-admin1"
+//    ],
+//     methods: ["GET", "POST", "PUT", "DELETE"],
+//     credentials: true
+//   })
+// );
 
 //api endpoints
 app.use('/api/user',userRouter)
