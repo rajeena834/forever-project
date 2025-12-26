@@ -37,6 +37,7 @@ app.use('/api/order',orderRouter)
 app.use("/api/cart", cartRouter);
 
 app.get('/',(req,res)=>{
+    console.log("Api WORKING")
 res.send("API working")
 })
 
