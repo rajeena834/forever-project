@@ -3,8 +3,8 @@ import { adminLogin, loginUser, registerUser } from "../controllers/userControll
 import adminAuth from "../middleware/adminAuth.js";
 
 const userRouter = express.Router();
-userRouter.post("/register",adminAuth, registerUser);
-userRouter.post("/login",adminAuth, loginUser);
-userRouter.post("/admin",adminAuth,adminLogin);
+userRouter.post("/register", registerUser);
+userRouter.post("/login", loginUser);
+userRouter.post("/admin",adminLogin);
 
 export default userRouter;
