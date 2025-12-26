@@ -21,7 +21,7 @@ app.use(express.json())
 app.use(
   cors({
     origin: [
-     "https://forever-frontend2.vercel.app",
+     "https://forever-frontend-beta-lilac.vercel.app",
       "https://forever-admin-ivory-eight.vercel.app",
       "http://localhost:5173",
       "http://localhost:5174"
