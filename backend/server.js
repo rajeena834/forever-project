@@ -21,16 +21,15 @@ app.use(express.json())
 app.use(
   cors({
     origin: [
-     "https://forever-frontend-beta-lilac.vercel.app",
+      "https://forever-frontend-beta-lilac.vercel.app",
       "https://forever-admin-ivory-eight.vercel.app",
       "http://localhost:5173",
-      "http://localhost:5174"
-   ],
+      "http://localhost:5174",
+    ],
     methods: ["GET", "POST", "PUT", "DELETE"],
-    credentials: true
+    credentials: true,
   })
 );
-
 //api endpoints
 app.use('/api/user',userRouter)
 app.use('/api/product',productRouter)
