@@ -38,7 +38,7 @@ app.use("/api/cart", cartRouter);
 
 app.get('/',(req,res)=>{
     console.log("Api WORKING")
-res.send("API working")
+res.send("API working 2.0")
 })
 
 app.listen(port, ()=>{
