@@ -14,7 +14,7 @@ const Orders = () => {
                 return null
             }
 
-            const response = await axios.post(backendUrl + '/api/order/list' , {}, {headers:{token}})
+            const response = await axios.post(backendUrl + '/api/order/userOrders' , {}, {headers:{token}})
          console.log("response from frontend orders",response.data)
 
         if(response.data.success){
