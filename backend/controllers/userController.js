@@ -3,8 +3,18 @@ import userModel from "../models/userModel.js";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 
-const createToken = (id) => {
-  return jwt.sign({ id }, process.env.JWT_SECRET);
+// const createToken = (id) => {
+//   return jwt.sign({ id }, process.env.JWT_SECRET);
+// };
+const createToken = (user) => {
+  return jwt.sign(
+    { 
+      id: user._id,
+      name: user.name,
+      email: user.email
+    },
+    process.env.JWT_SECRET
+  );
 };
 
 //Route for the user login
@@ -19,7 +29,8 @@ const loginUser = async (req, res) => {
     }
     const isMatch = await bcrypt.compare(password, user.password);
     if (isMatch) {
-      const token = createToken(user._id);
+      const token = createToken(user);
+      //const token = createToken(user._id);
       res.json({ success: true, token });
     } else {
       res.json({ success: false, message: "Invalid credentials" });
@@ -64,7 +75,8 @@ const registerUser = async (req, res) => {
     });
 
     const user = await newUser.save();
-    const token = createToken(user._id);
+    const token = createToken(user);
+    //const token = createToken(user._id);
     res.json({ success: true, token });
   } catch (error) {
     console.log(error);
