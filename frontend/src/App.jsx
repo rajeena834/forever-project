@@ -17,6 +17,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import PlaceOrder from "./pages/PlaceOrder";
 import Orders from "./pages/Orders";
 import Verify from "./pages/Verify";
+import Profile from "./pages/Profile";
 const App = () => {
   return (
     <div className="px-4 sm:px-[5vw] md:px-[7vw] lg:px-[9vw]">
@@ -41,7 +42,7 @@ const App = () => {
 
         <Route path="/orders" element={<Orders />} />
         <Route path="/verify" element={<Verify/>} />
-
+          <Route path="/profile" element={<Profile />} />
         <Route path="/product/:productId" element={<Product />} />
 
       </Routes>
